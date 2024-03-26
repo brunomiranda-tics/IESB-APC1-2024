@@ -1,0 +1,59 @@
+CABEÇALHO
+	Autor: Prof. Bruno Miranda
+	Objetivo: Calcular média final de APC1
+	Data: 21/03/2024
+ALGORITMO
+	DECLARE
+		REAL total_pontos_AA1 = 0.0;
+		REAL total_pontos_AA2 = 0.0;
+		REAL nota_P1 = 0.0;
+		REAL nota_P2 = 0.0;
+		REAL nota_A1 = 0.0;
+		REAL nota_A2 = 0.0;
+		REAL media_final = 0.0;
+
+	DECLARE CONST
+    	REAL MEDIA_REFERENCIA = 5.0;
+    	REAL PESO_A1 = 0.4;
+    	REAL PESO_A2 = 0.6;	
+
+	ESCREVA("Digite a sua nota da P1:");
+	LEIA(nota_P1);
+
+	ESCREVA("Digite a soma de pontos das suas AA1:");
+	LEIA(total_pontos_AA1);
+
+	ESCREVA("Digite a sua nota da P2:");
+	LEIA(nota_P2);
+
+	ESCREVA("Digite a soma de pontos das suas AA2:");
+	LEIA(total_pontos_AA2);
+
+	nota_A1 = nota_P1 + total_pontos_AA1;
+	nota_A2 = nota_P2 + total_pontos_AA2;
+
+	media_final = (PESO_A1 * nota_A1) + (PESO_A2 * nota_A2);
+
+	SE(media_final > 0)
+	ENTAO INICIO
+
+		SE(media_final < MEDIA_REFERENCIA) 
+		ENTAO INICIO
+			ESCREVA("Infelizmente você não foi aprovado!");
+		FIM
+		SENAO SE(media_final > MEDIA_REFERENCIA e media_final < 7.0)
+		ENTAO INICIO
+			ESCREVA("Você foi aprovado e sua menção foi MM.");
+		FIM
+		SENAO SE(media_final > MEDIA_REFERENCIA e media_final > 7.0 e media_final < 9.0 )
+		ENTAO INICIO
+			ESCREVA("Você foi aprovado e sua menção foi MS.");
+		FIM
+		SENAO
+		ENTAO INICIO
+			ESCREVA("Parabéns! Você foi aprovado e sua menção foi SS!");
+		FIM
+
+	FIM
+
+FIM_ALGORITMO
